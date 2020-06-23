@@ -1,0 +1,14 @@
+# Generate lock file with command: PIP_PROCESS_DEPENDENCY_LINKS=1 pipenv lock
+[tool.poetry]
+name = "mlflow_server"
+version = "0.0.1"
+description = "The app for deploying a churn model."
+authors = ["Fair"]
+packages = [
+	{ include = "mlflow_server", from = "." },
+]
+
+[tool.poetry.dependencies]
+
+python = "~3.7"
+mlflow = "*"
