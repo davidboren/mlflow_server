@@ -7,6 +7,7 @@ WORKDIR ${APPDIR}
 RUN set -ex \
     && apt-get update \
     && apt-get install -yqq --no-install-recommends --fix-missing \
+        libpq-dev python-dev \
         build-essential
 
 COPY ./Makefile ${APPDIR}/Makefile
@@ -21,5 +22,5 @@ COPY ./entrypoint.sh ${APPDIR}/entrypoint.sh
 
 RUN chmod +x ${APPDIR}/entrypoint.sh
 
-CMD ["entrypoint.sh"]
+CMD ["/bin/bash", "entrypoint.sh"]
 
